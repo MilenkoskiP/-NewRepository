@@ -1,0 +1,14 @@
+import java.util.*;
+import java.util.stream.Collectors;
+public class Main {
+    public static void main(String[] args) {
+        Map <Integer, String > hmap = new HashMap<Integer, String>();
+        hmap.put(11, "Apple");
+        hmap.put(22, "Orange");
+        hmap.put(33, "Kiwi");
+        hmap.put(44, "Banana");
+
+        Map <Integer, String > results = hmap.entrySet().stream().filter(map -> map.getKey().intValue() <= 22).collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
+        System.out.println("Results: " +results);
+    }
+}
